@@ -1,0 +1,28 @@
+{
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "sourceMap": true,
+        "pretty": true,
+        "target": "es5", //编译输出目标ES版本
+        "strict": true, // 以严格模式解析
+        "module": "esnext", // 采用的模块系统
+        "moduleResolution": "node", //如何处理模块
+        "allowJs": true, // 允许编译js文件
+        "isolatedModules": false, //讲每个文件作为单独的模块
+        "experimentalDecorators": true, //启用装饰器
+        "importHelpers": true, // 从tslib 导入外部帮助库：比如__extends, __rest等,
+        "emitDecoratorMetadata": true, //启用设计类型元数据
+        "lib": [
+            "dom",
+            "es5",
+            "es6",
+            "es7",
+            "es2015.promise"
+        ]
+    }
+}
