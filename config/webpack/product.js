@@ -13,6 +13,7 @@ const TerserJsPlugin = require('terser-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlPluginRemove = require('html-webpack-plugin-remove')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
 
@@ -91,7 +92,8 @@ class ProConfig extends BaseConfig {
             new MiniCssExtractPlugin({
                 filename: 'styles/[name].[hash].css',
                 chunkFilename: 'styles/[id].[hash].css'
-            }),
+			}),
+			new HtmlPluginRemove(/<script.*?src=\"dist\/dist\..*?js\"><\/script>/),
             new ManifestPlugin()
 
         ])

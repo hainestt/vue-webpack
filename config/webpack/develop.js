@@ -21,7 +21,7 @@ class DevConfig extends BaseConfig {
             mode: 'development',
             output: {
                 path: this.distAbsolutePath,
-                filename: '[name].js',
+                filename: 'dist.js',
                 publicPath: this.distAbsolutePath
             },
             devServer: {
